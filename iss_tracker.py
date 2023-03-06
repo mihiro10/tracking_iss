@@ -174,7 +174,7 @@ def delete_data():
     except NameError:
         return "Data was already deleted. \n"
 
-@app.route('/get-data', methods=['POST'])
+@app.route('/post-data', methods=['POST'])
 def recover_data():
     """
     This recovers the data of entire data and data
@@ -225,7 +225,7 @@ def help():
     DELETE /delete-data
         - Deletes the global data variable
         
-    POST /get-data
+    POST /post-data
         - Retrieves the XML data again and updates the global data variable
 
     GET /comment
