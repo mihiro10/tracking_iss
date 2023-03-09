@@ -154,11 +154,13 @@ Once up, open up another terminal to run the queries desired.
 Once the Flask app is up and running, the following methods are available.
 
 
+<h5>To return the entire state vector information as a list of dictionaries.</h5>
+Run
 
 ```
 curl localhost:5000
 ```
-Returns the entire state vector information as a list of dictionaries.
+
 
 Here is an example snippet
 
