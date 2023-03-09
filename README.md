@@ -7,7 +7,7 @@ The data set used in this project is the ISS OEM data set published by NASA. The
 
 <h3>Flask App/Scripts</h3>
 
-`iss_tracker.py:` contains a number of endpoints that provide information on the ISS's location and speed:
+`iss_tracker.py:` contains a number of endpoints that provide information on the ISS's:
 
 | Route | Method    | What it does   |
 | :---:   | :---: | :---: |
@@ -225,7 +225,7 @@ Here is an example.
 ... etc.
 ```
 
-To specify the range of these epochs, a query parameters can be added. 
+To specify the range of these epochs,query parameters can be added. 
 ```
 curl localhost:5000/epochs?limit=int&offset=int
 ```

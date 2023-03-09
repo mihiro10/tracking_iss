@@ -341,7 +341,7 @@ def epochs_data_specific_location(epoch: str) -> dict:
                 
                 # Accounting for degrees represented past parameters
 
-                while (lon < -180): # wh
+                while (lon < -180):
                     lon = lon + 360 
                 while (lon > 180):
                     lon = lon - 360
