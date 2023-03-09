@@ -27,6 +27,8 @@ The data set used in this project is the ISS OEM data set published by NASA. The
 
 `Dockerfile:` Is a document that contains the commands neccesary to containerize the iss_tracker docker image.
 
+`docker-compose.yml` Is a file that automates the deployment of the app. It is configured to the image with the chosen tag.
+
 <h3>Installation Methods:</h3>
 
 <h4>Method 1: Using the existing Docker Image</h4>
@@ -490,9 +492,25 @@ Here is an example using "2023-082T12:00:00.000Z"
 }
 ```
 
-<h4> TO return a dictionary of the information about the latest recording of the ISS</h4>
+<h4> To return a dictionary of the information about the latest recording of the ISS</h4>
 run
 
 ```
 curl localhost:5000/now
+```
+
+Here is an example output
+
+```
+{
+  "closest_epoch": "2023-068T18:52:17.828Z",
+  "geoloc": "over the ocean",
+  "location": {
+    "alt": 422.4791789333376,
+    "lat": 27.25115813046933,
+    "lon": -174.3411771471322
+  },
+  "seconds from now": 11.438713312149048,
+  "speed": 7.663538333123568
+}
 ```

@@ -337,7 +337,7 @@ def epochs_data_specific_location(epoch: str) -> dict:
                 mins = int(time_of_epoch[12] + time_of_epoch[13])
 
                 lat = math.degrees(math.atan2(z, math.sqrt(x**2 + y**2)))                
-                lon = math.degrees(math.atan2(y, x)) - ((hrs-12)+(mins/60))*(360/24) + 24
+                lon = math.degrees(math.atan2(y, x)) - ((hrs-12)+(mins/60))*(360/24) + 32
                 
                 # Accounting for degrees represented past parameters
 
@@ -382,10 +382,10 @@ def epochs_data_now() -> dict:
         MEAN_EARTH_RADIUS = 6371
         really_large_value = 1e20
         smallest_difference = really_large_value
+        time_now = time.time()         # gives present time in seconds since unix epoch
         for epoch_values in data:
-            time_now = time.time()         # gives present time in seconds since unix epoch
             time_epoch = time.mktime(time.strptime(epoch_values['EPOCH'] [:-5], '%Y-%jT%H:%M:%S'))        # gives epoch (eg 2023-058T12:00:00.000Z) time in seconds since unix epoch
-            difference = time_now - time_epoch
+            difference = abs(time_epoch - time_now)
             if difference < smallest_difference:
                 smallest_difference = difference
                 closest_epoch = epoch_values
@@ -398,7 +398,7 @@ def epochs_data_now() -> dict:
         hrs = int(time_of_epoch[9] + time_of_epoch[10])
         mins = int(time_of_epoch[12] + time_of_epoch[13])
         lat = math.degrees(math.atan2(z, math.sqrt(x**2 + y**2)))                
-        lon = math.degrees(math.atan2(y, x)) - ((hrs-12)+(mins/60))*(360/24) + 24
+        lon = math.degrees(math.atan2(y, x)) - ((hrs-12)+(mins/60))*(360/24) + 32
         
         # Accounting for degrees represented past parameters
 
