@@ -17,7 +17,7 @@ The data set used in this project is the ISS OEM data set published by NASA. The
 | `/epochs/<epoch>` </code> | GET   |  Returns a specific epoch value as a dictionary. |
 | `/epochs/<epoch>/speed` </code> | GET   |  Returns the speed of the ISS at a specific epoch as a dictionary. |
 | `/delete-data` </code> | DELETE   | Deletes the global data and global entire_data variables. |
-| `/get-data` </code> | POST | Retrieves the XML data again and updates the global data variable |
+| `/post-data` </code> | POST | Retrieves the XML data again and updates the global data variable |
 | ``/comment``                    | GET        | Returns 'comment' list object from ISS data  |
 | ``/header``                     | GET        | Returns 'header' dict object from ISS data   |
 | ``/metadata``                   | GET        | Returns 'metadata' dict object from ISS data |
@@ -339,7 +339,7 @@ This will return
     DELETE /delete-data
         - Deletes the global data variable
         
-    POST /get-data
+    POST /post-data
         - Retrieves the XML data again and updates the global data variable
     
     GET /comment
