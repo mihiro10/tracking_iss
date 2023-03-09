@@ -453,10 +453,13 @@ This should return something like this
 
 <h4>To return the metadata dictionary form the ISS data</h4>
 run
+
 ```
 curl localhost:5000/metadata
 ```
+
 This should return something like this
+
 ```
 {
   "CENTER_NAME": "EARTH",
@@ -471,10 +474,13 @@ This should return something like this
 
 <h4>To return a specific location taken from the curl</h4>
 run
+
 ```
 curl localhost:5000/epochs/<epoch>/location
 ```
+
 Here is an example using "2023-082T12:00:00.000Z" 
+
 ```
 {
   "alt": 426.493361256541,
