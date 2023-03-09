@@ -154,7 +154,7 @@ Once up, open up another terminal to run the queries desired.
 Once the Flask app is up and running, the following methods are available.
 
 
-<h5>To return the entire state vector information as a list of dictionaries.</h5>
+<h4>To return the entire state vector information as a list of dictionaries.</h4>
 Run
 
 ```
@@ -198,12 +198,12 @@ Here is an example snippet
 
 
 
-Running 
+<h4>To find the list of epochs in the XML file, run</h4>
 
 ```
 curl localhost:5000/epochs
 ```
-Returns a list of epochs in the XML file.
+
 
 Here is an example.
 
@@ -255,7 +255,7 @@ Here is an example using ?limit=20&offset=50
 
 
 
-To find information about a specific epoch, include the information after epoch. Here is an example using 2023-063T11:55:00.000Z
+<h4>To find information about a specific epoch, include the information after </h4>epoch. Here is an example using 2023-063T11:55:00.000Z
 
 ```
 curl localhost:5000/epochs/2023-063T11:55:00.000Z
@@ -292,7 +292,9 @@ This returns
 }
 ```
 
-To find the speed at that location, add /speed to the end. Here is an example continuing the one from before.
+<h4>To find the speed at that location, add /speed to the end.</h4> 
+
+Here is an example continuing the one from before.
 
 ```
 curl localhost:5000/epochs/2023-063T11:55:00.000Z/speed
@@ -305,7 +307,7 @@ Output
 }
 ```
 
-To get help on different methods, run
+<h4>To get help on different methods, run</h4>
 
 ```
 curl localhost:5000/help
@@ -363,7 +365,8 @@ This will return
             "speed" = Speed at given instance in km/s
 ```
 
-To delete the data,run
+<h4>To delete the data</h4>
+Run
 
 ```
 curl -X DELETE localhost:5000/delete-data
@@ -376,7 +379,8 @@ All data has been deleted successfully.
 confirming that the data was deleted.
 
 
-To recover that data, run
+<h4>To recover that data</h4>
+run
 ```
 curl -X POST localhost:5000/post-data
 ```
@@ -390,7 +394,8 @@ This confirms that the data was restored and the other methods will work.
 
 
 
-To return the comment list object, run
+<h4>To return the comment list object</h4>
+run
 
 ```
 curl localhost:5000/comment
@@ -433,4 +438,55 @@ This should return something like this
 ]
 ```
 
+<h4>To return the header as a dictionary </h4>
+run
+```
+curl localhost:5000/header
+```
+This should return something like this
+```
+{
+  "CREATION_DATE": "2023-067T21:02:49.080Z",
+  "ORIGINATOR": "JSC"
+}
+```
 
+<h4>To return the metadata dictionary form the ISS data</h4>
+run
+```
+curl localhost:5000/metadata
+```
+This should return something like this
+```
+{
+  "CENTER_NAME": "EARTH",
+  "OBJECT_ID": "1998-067-A",
+  "OBJECT_NAME": "ISS",
+  "REF_FRAME": "EME2000",
+  "START_TIME": "2023-067T12:00:00.000Z",
+  "STOP_TIME": "2023-082T12:00:00.000Z",
+  "TIME_SYSTEM": "UTC"
+}
+```
+
+<h4>To return a specific location taken from the curl</h4>
+run
+```
+curl localhost:5000/epochs/<epoch>/location
+```
+Here is an example using "2023-082T12:00:00.000Z" 
+```
+{
+  "alt": 426.493361256541,
+  "geoloc": "Over the ocean",
+  "lat": 3.693612400678767,
+  "lon": 59.77071661260687
+}
+```
+
+<h4> TO return a dictionary of the information about the latest recording of the ISS</h4>
+run
+
+```
+curl localhost:5000/now
+```
