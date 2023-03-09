@@ -7,7 +7,7 @@ The data set used in this project is the ISS OEM data set published by NASA. The
 
 <h3>Flask App/Scripts</h3>
 
-`iss_tracker.py:` contains three endpoints that provide information on the ISS's location and speed:
+`iss_tracker.py:` contains a number of endpoints that provide information on the ISS's location and speed:
 
 | Route | Method    | What it does   |
 | :---:   | :---: | :---: |
