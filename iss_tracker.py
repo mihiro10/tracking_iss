@@ -194,7 +194,7 @@ def recover_data():
 # What happens when ou post 2 times?
 
 @app.route('/help', methods = ['GET'])
-def help():
+def help()->str:
     """
     This function returns a human-readable description of all available routes and their methods for the API
 
@@ -257,7 +257,7 @@ def help():
     """
 
 @app.route('/comment', methods=['GET'])
-def comment():
+def comment()->list:
     """
     This function returns the comment list object
 
