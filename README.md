@@ -37,6 +37,11 @@ The data set used in this project is the ISS OEM data set published by NASA. The
 
 This method allows you to use the docker-compose.yml file to spin up all the required services in a few simple commands.
 
+First run 
+
+```
+docker pull mihiro10/iss_tracker:1.0
+```
 
 Once the repository is cloned, we need to make sure your port is not currently being used, and if so, stop it to allow the port to be used. To check this run
 
