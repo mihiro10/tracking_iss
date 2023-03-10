@@ -31,71 +31,8 @@ The data set used in this project is the ISS OEM data set published by NASA. The
 
 <h3>Installation Methods:</h3>
 
-<h4>Method 1: Using the existing Docker Image</h4>
-Step 1: 
-Run the following in the terminal to pull the docker container.
 
-```
-docker pull mihiro10/iss_tracker:hw05
-```
-
-Run,
-
-```
-docker run -it --rm -p 5000:5000 mihiro10/iss_tracker:hw05
-```
-
-Finally, in a seperate terminal, run the different desired methods.
-
-```
-curl localhost:5000/
-```
-
-<h4>Method 2: Building the image from Dockerfile</h4>
-
-Check that you are in the directory with the contents of homework05
-
-Here is a way to check.
-
-Run
-
-```
-ls
-```
-
-and make sure the output looks like
-
-```
-Dockerfile  README.md  iss_tracker.py
-```
-
-Now, to build the image using the Dockerfile, use
-
-```
-docker build -t <username>/iss_tracker:<tag> .
-```
-
-To check that it was built, run 
-```
-$ docker images
-REPOSITORY                  TAG       IMAGE ID       CREATED         SIZE
-mihiro10/iss_tracker        hw05      ff34eab7ec29   22 hours ago    897MB
-``` 
-
-
-Then to run the flask app, run
-
-```
-docker run -it --rm -p 5000:5000 <username>/iss_tracker:<tag>
-```
-
-Finally, open up another terminal and run the different methods
-
-```
-curl 'localhost:5000/' 
-```
-
-<h4>Method 3: Using the docker-compose.yml file</h4>
+<h4>Using the docker-compose.yml file</h4>
 
 
 This method allows you to use the docker-compose.yml file to spin up all the required services in a few simple commands.
@@ -147,7 +84,11 @@ flask-app_1  |  * Debugger is active!
 flask-app_1  |  * Debugger PIN: 139-547-370
 ```
 
-Once up, open up another terminal to run the queries desired. 
+Once up, open up another terminal and run the different methods
+
+```
+curl 'localhost:5000/' 
+```
 
 
 
